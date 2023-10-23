@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+</head>
+
+<body onLoad="inicio()">
+
+    <!-- ¡Desafíos de esta clase!
+            Agregar otras monedas para convertir;
+
+            Conversor de temperaturas entre fahrenheit, kelvin y celsius;
+
+            Agregar en el alert el nombre de la persona que está pidiendo la conversión;
+
+            Agregar una línea al proyecto desarrollado para que aparezca el valor en bitcoin. -->
+
+    <main>
+        <div class="container">
+            <h1 class="page-title">
+                Conversor de monedas
+            </h1>
+        </div>
+
+        <img src="https://caelum-online-public.s3.amazonaws.com/assets-imersaodev/Convers%C3%A3o+1.png">
+        </a>
+
+
+
+        <div class="presentacion">
+            <p>Bienvenido <span id="nombre"></span>  al <b>Conversor de Monedas</b>, en este proyecto usted tiene que convertir una
+                moneda a la otra moneda deseada. EJ: Peso ARS a Dolar EEUU</p>
+        </div>
+
+
+        <div class="container__input">
+
+            <div class="container__pesos">
+
+                <small>Seleccione su tipo de moneda</small>
+
+                <select name="" id="moneda1">
+                    <option value="-" selected disabled> - - </option>
+                    <option value="PA">Peso Argentino</option>
+                    <option value="PC" >Peso Chileno</option>
+                    <option value="PM">Peso México</option>
+                    <option value="D">Dolar EEUU</option>
+                </select>
+                <small>Ingrese su monto deseado:</small>
+                <input type="number" min="1" name="number" id="cantidad" >
+
+              <!--   <small>Resultado</small>
+                <input type="number" name="number" id="resultado" disabled> -->
+
+               
+            </div>
+
+            <div class="mensajeConversior">
+                <small>Convertir a</small>
+                <i class="bi bi-arrow-repeat iconoConversion"></i>
+            </div>
+
+            <div class="container__dolar">
+                <small>Seleccione el tipo de moneda </small>
+
+                <select name="" id="moneda2" onChange="conversion()">
+                    <option value="-" selected disabled> - - </option>
+                    <option value="PA">Peso Argentino</option>
+                    <option value="PC" >Peso Chileno</option>
+                    <option value="PM">Peso Mexico</option>
+                    <option value="D">Dolar EEUU</option>
+                </select>
+
+                 <small>Resultado</small>
+                <span id="resultado"></span>
+            
+            </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"> </script>
+
+
+</body>
+
+</html>
