@@ -1,7 +1,7 @@
 /* Al iniciar la pagina */
 
 function inicio() {
-    // Solicitar el nombre al usuario
+    
 
     let nombre = "";
     document.getElementById("resultado").innerHTML = 0;
@@ -17,6 +17,58 @@ function inicio() {
 
 
     document.getElementById("nombre").innerHTML = nombre
+}
+
+function temperaturas() {
+    debugger
+    function convertirTemperatura(valor, tipo) {
+        switch (tipo) {
+            case 1: // Fahrenheit
+                return (valor - 32) * 5/9;
+            case 2: // Kelvin
+                return valor - 273.15;
+            case 3: // Celsius
+                return valor;
+            default:
+                return NaN; // Tipo de temperatura no válido
+        }
+    }
+
+    let tipoTemp1, tipoTemp2, valorTemp1, valorTemp2;
+
+    // Obtener el primer tipo de temperatura
+    do {
+        debugger;
+        tipoTemp1 = parseInt(prompt("Escriba el número correspondiente al tipo de temperatura deseada (1 Fahrenheit | 2 Kelvin | 3 Celsius):"));
+
+        if (isNaN(tipoTemp1) || tipoTemp1 <= 0 || tipoTemp1 >= 4) {
+            alert("Ingrese un numero válido (1, 2 o 3) para continuar.");
+        }
+    } while (isNaN(tipoTemp1) || tipoTemp1 <= 0 || tipoTemp1 >= 4);
+
+    // Obtener el valor de la primera temperatura
+    valorTemp1 = parseFloat(prompt("Ingrese el valor de la primera temperatura:"));
+
+    // Obtener el segundo tipo de temperatura
+    do {
+        debugger;
+        tipoTemp2 = parseInt(prompt("Escriba el segundo número correspondiente al tipo de temperatura deseada (1 Fahrenheit | 2 Kelvin | 3 Celsius):"));
+
+        if (isNaN(tipoTemp2) || tipoTemp2 <= 0 || tipoTemp2 >= 4) {
+            alert("Ingrese un numero válido (1, 2 o 3) para continuar.");
+        }
+    } while (isNaN(tipoTemp2) || tipoTemp2 <= 0 || tipoTemp2 >= 4);
+
+    // Obtener el valor de la segunda temperatura
+    valorTemp2 = parseFloat(prompt("Ingrese el valor de la segunda temperatura:"));
+
+    // Realizar las conversiones
+    const resultado1 = convertirTemperatura(valorTemp1, tipoTemp1);
+    const resultado2 = convertirTemperatura(valorTemp2, tipoTemp2);
+
+    // Mostrar resultados
+    alert(`Resultado 1: ${resultado1.toFixed(2)} grados Celsius`);
+    alert(`Resultado 2: ${resultado2.toFixed(2)} grados Celsius`);
 }
 
 
@@ -47,7 +99,7 @@ function conversion() {
 
         if (moneda1 == "PA" && moneda2 == "PA") {
 
-            document.getElementById("resultado").innerHTML = monto
+            document.getElementById("resultado").innerHTML = monto;
             resultadoBitcoin = monto * 0.000000090;
             document.getElementById("bitcoin").innerHTML = resultadoBitcoin;
 
@@ -152,6 +204,10 @@ function conversion() {
 
 
     }
+
+   
+
+    
 
 
 
