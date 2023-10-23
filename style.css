@@ -143,7 +143,8 @@ input{
     font-size: 40px;
 }
 
-#resultado{
+#resultado,
+#bitcoin{
     font-size: 30px;
     color: #51ff00;
 }
